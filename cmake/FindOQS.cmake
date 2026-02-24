@@ -44,5 +44,13 @@ else()
 
     set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS_SAVED}")
 
+    # liboqs generates headers with the oqs/ prefix into its build include dir.
+    # The oqs target only exports the source dir, so we must add the build
+    # include path for #include <oqs/oqs.h> to resolve correctly.
+    FetchContent_GetProperties(liboqs BINARY_DIR LIBOQS_BINARY_DIR)
+    target_include_directories(oqs
+        PUBLIC "$<BUILD_INTERFACE:${LIBOQS_BINARY_DIR}/include>"
+    )
+
     add_library(OQS::oqs ALIAS oqs)
 endif()
