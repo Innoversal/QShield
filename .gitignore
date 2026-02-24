@@ -1,0 +1,50 @@
+# Build directories
+build/
+out/
+cmake-build-*/
+
+# Object files
+*.o
+*.obj
+*.lo
+*.slo
+
+# Libraries
+*.a
+*.la
+*.lib
+*.so
+*.so.*
+*.dylib
+*.dll
+
+# Executables
+*.exe
+*.out
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.cache/
+compile_commands.json
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Test output
+Testing/
+*.log
+
+# Coverage
+*.gcno
+*.gcda
+*.gcov
+coverage/
+
+# Dependencies (fetched by CMake)
+_deps/
+external/liboqs/
